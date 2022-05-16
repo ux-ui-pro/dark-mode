@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>dark-mode</title>
+	<meta name="robots" content="none">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" href="img/fav/favicon.svg">
+	<link rel="mask-icon" href="img/fav/mask-icon.svg" color="#000000">
+	<link rel="apple-touch-icon" href="img/fav/apple-touch-icon.png">
+	<link rel="manifest" href="manifest.json">
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="">
+	<script>
+        currentTheme = localStorage.getItem('savedColorScheme') || 'dark'
+        document.documentElement.setAttribute('data-theme', 'theme-' + currentTheme)
+	</script>
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+<div id="app" class="layout">
+	<main role="main" class="main">
+		<button class="switch-theme js-switch-theme">
+			<svg viewBox="0 0 24 24">
+				<path class="core"/>
+				<path class="halo"/>
+			</svg>
+		</button>
+	</main>
+</div>
+<script src="/js/app.min.js"></script>
+</body>
+</html>

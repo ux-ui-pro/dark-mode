@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/gulp
+Thumbs.db
+gulpfile.js
+package.json
+package-lock.json
+*.txt
+*.log

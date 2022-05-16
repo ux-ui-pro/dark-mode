@@ -1,0 +1,57 @@
+.switch-theme {
+	--cubic-bezier: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	--icon-dark: black;
+	--icon-light: lightgray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.6rem;
+	height: 3.6rem;
+	background: none;
+	border: none;
+
+	svg {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	path.core {
+		d: path("M13.0001 12C13.0001 15.75 10.7501 18 7.00011 18C3.25011 18 5 15.75 5 12C5 8.25 3.25011 6 7.00011 6C10.7501 6 13.0001 8.25 13.0001 12Z");
+		fill: var(--icon-dark);
+		transition: all 0.75s var(--cubic-bezier);
+	}
+
+	path.halo {
+		d: path("M12.0001 6C15.3101 6 18.0001 8.69 18.0001 12C18.0001 15.31 15.3101 18 12.0001 18C8.69006 18 6.00006 15.31 6.00006 12C6.00006 8.69 8.69006 6 12.0001 6ZM4.00006 15.31V20H8.69006L12.0001 23.31L15.3101 20H20.0001V15.31L23.3101 12L20.0001 8.69V4H15.3101L12.0001 0.689997L8.69006 4H4.00006V8.69L0.690058 12L4.00006 15.31Z");
+		fill: var(--icon-dark);
+		transition: all 0.35s ease;
+		transform-origin: 50% 50%;
+		animation: switch-halo-rotate-left 0.75s var(--cubic-bezier);
+	}
+
+	&.dark-mode {
+		path.core {
+			d: path("M16 12C16 14.5 14.5 16 12 16C9.5 16 8 14.5 8 12C8 9.5 9.5 8 12 8C14.5 8 16 9.5 16 12Z");
+			fill: var(--icon-light);
+		}
+
+		path.halo {
+			animation: switch-halo-rotate-right 0.75s var(--cubic-bezier);
+			fill: var(--icon-light);
+		}
+	}
+}
+
+@keyframes switch-halo-rotate-right {
+	100% {
+		transform: rotate(180deg);
+	}
+}
+
+@keyframes switch-halo-rotate-left {
+	100% {
+		transform: rotate(-180deg);
+	}
+}
+
+

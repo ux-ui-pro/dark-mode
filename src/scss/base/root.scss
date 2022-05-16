@@ -1,0 +1,19 @@
+:root {
+    --theme-dark: hsl(0 0% 0%);
+    --theme-light: hsl(0 0% 100%);
+
+    --c-color: hsl(0 0% 0%);
+    --c-background: hsl(0 0% 100%);
+}
+
+:root[data-theme='theme-dark'] {
+    --c-color: hsl(0 0% 100%);
+    --c-background: hsl(0 0% 0%);
+}
+
+body {
+    background: var(--c-background);
+    color: var(--c-color);
+}
+
+

@@ -1,9 +1,0 @@
-{
-    "name": "dark-mode",
-    "short_name": "dark-mode",
-    "icons": [
-        { "src": "/img/fav/icon-192.png", "type": "image/png", "sizes": "192x192" },
-        { "src": "/img/fav/icon-512.png", "type": "image/png", "sizes": "512x512" }
-    ],
-    "display": "fullscreen"
-}

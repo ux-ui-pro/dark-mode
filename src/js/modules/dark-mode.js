@@ -20,12 +20,6 @@ export function ThemeSwitcher() {
         applyTheme()
     }
 
-
-    for (let value of Object.values(themeTextMap)) {
-        console.log(value)
-    }
-
-
     function init() {
         currentTheme = localStorage.getItem('savedColorScheme') || 'dark'
         applyTheme()
@@ -35,18 +29,22 @@ export function ThemeSwitcher() {
         init()
     }
 
-    function applyTheme() {
+    const metaTheme = document.createElement('meta')
+    metaTheme.name = 'theme-color'
+    document.head.appendChild(metaTheme)
 
+    function applyTheme() {
         let dataTheme = currentTheme
         if (dataTheme === null) {
             dataTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         }
 
         document.documentElement.setAttribute('data-theme', 'theme-' + dataTheme)
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', window.metaColors[dataTheme])
+        // document.querySelector('meta[name="theme-color"]').setAttribute('content', window.metaColors[dataTheme])
+
+        metaTheme.content = window.metaColors[dataTheme]
 
         toggleButton.setAttribute('aria-label', themeTextMap[currentTheme])
-
         toggleButton.classList.remove('dark-mode', 'light-mode')
         toggleButton.classList.add(dataTheme + '-mode')
 
@@ -62,7 +60,6 @@ export function ThemeSwitcher() {
             spotDarkMode.beginElement()
             haloDarkMode.beginElement()
         }
-
     }
 
     toggleButton.addEventListener('click', () => {

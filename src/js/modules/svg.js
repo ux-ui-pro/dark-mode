@@ -1,6 +1,6 @@
 export function Svg() {
 
-    let file = "../img/svg/icons.svg",
+    let file = "./img/svg/icons.svg",
         revision = 123
 
     if( !document.createElementNS || !document.createElementNS( "http://www.w3.org/2000/svg", "svg" ).createSVGRect ) {

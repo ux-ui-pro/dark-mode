@@ -5,39 +5,12 @@ html {
 
 body {
     font-feature-settings: "kern" 1,"liga" 0;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.5;
 }
 
 html,
 body,
-input,
-textarea,
 button {
     -webkit-font-smoothing: subpixel-antialiased;
-}
-
-a {
-    text-decoration-skip-ink: auto;
-}
-
-a,
-a:visited,
-a:hover,
-a:active {
-    backface-visibility: hidden;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: bottom;
-
-    p &:not(:only-child) {
-        vertical-align: baseline;
-    }
 }
 
 

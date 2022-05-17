@@ -11,11 +11,23 @@
     --c-background: hsl(0 0% 0%);
 }
 
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+}
+
 body {
+    font-feature-settings: "kern" 1,"liga" 0;
     background: var(--c-background);
     color: var(--c-color);
     display: flex;
     justify-content: center;
+}
+
+html,
+body,
+button {
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 

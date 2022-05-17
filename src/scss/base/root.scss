@@ -1,6 +1,6 @@
 :root {
-    --theme-dark: black;
-    --theme-light: white;
+    --theme-dark:#000000;
+    --theme-light:#ffffff;
 
     --c-color: hsl(0 0% 0%);
     --c-background: hsl(0 0% 100%);
@@ -14,6 +14,9 @@
 body {
     background: var(--c-background);
     color: var(--c-color);
+
+    display: flex;
+    justify-content: center;
 }
 
 

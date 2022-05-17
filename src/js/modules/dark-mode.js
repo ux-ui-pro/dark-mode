@@ -1,7 +1,7 @@
 export function ThemeSwitcher() {
 
     const toggleButton = document.querySelector('.switch-theme'),
-        themeTextMap = {'dark': 'Dark Mode', 'light': 'Light Mode'},
+        themeTextMap = {'dark': 'Light Mode', 'light': 'Dark Mode'},
         bodyStyles = window.getComputedStyle(document.body)
 
     let barThemeDark = bodyStyles.getPropertyValue('--theme-dark'),
@@ -19,6 +19,12 @@ export function ThemeSwitcher() {
         localStorage.setItem('savedColorScheme', currentTheme)
         applyTheme()
     }
+
+
+    for (let value of Object.values(themeTextMap)) {
+        console.log(value)
+    }
+
 
     function init() {
         currentTheme = localStorage.getItem('savedColorScheme') || 'dark'
@@ -38,6 +44,8 @@ export function ThemeSwitcher() {
 
         document.documentElement.setAttribute('data-theme', 'theme-' + dataTheme)
         document.querySelector('meta[name="theme-color"]').setAttribute('content', window.metaColors[dataTheme])
+
+        toggleButton.setAttribute('aria-label', themeTextMap[currentTheme])
 
         toggleButton.classList.remove('dark-mode', 'light-mode')
         toggleButton.classList.add(dataTheme + '-mode')

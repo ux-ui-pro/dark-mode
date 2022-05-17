@@ -40,9 +40,8 @@ export function ThemeSwitcher() {
         }
 
         document.documentElement.setAttribute('data-theme', 'theme-' + dataTheme)
-        // document.querySelector('meta[name="theme-color"]').setAttribute('content', window.metaColors[dataTheme])
 
-        metaTheme.content = window.metaColors[dataTheme]
+        metaTheme.content = window.metaColors[dataTheme].trim()
 
         toggleButton.setAttribute('aria-label', themeTextMap[currentTheme])
         toggleButton.classList.remove('dark-mode', 'light-mode')

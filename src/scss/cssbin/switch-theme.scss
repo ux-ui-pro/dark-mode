@@ -10,10 +10,6 @@
 	border: none;
 	outline: none;
 
-	.svg-icon {
-		width: 2.4rem; height: 2.4rem;
-	}
-
 	&.light-mode {
 		.svg-icon {
 			fill: var(--c-color);

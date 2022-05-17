@@ -1,6 +1,6 @@
 export function ThemeSwitcher() {
 
-    const toggleButton = document.querySelector('.js-switch-theme'),
+    const toggleButton = document.querySelector('.switch-theme'),
         themeTextMap = {'dark': 'Dark Mode', 'light': 'Light Mode'},
         bodyStyles = window.getComputedStyle(document.body)
 
@@ -25,17 +25,36 @@ export function ThemeSwitcher() {
         applyTheme()
     }
 
-    init()
+    window.onload = function() {
+        init()
+    }
 
     function applyTheme() {
+
         let dataTheme = currentTheme
         if (dataTheme === null) {
             dataTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         }
+
         document.documentElement.setAttribute('data-theme', 'theme-' + dataTheme)
         document.querySelector('meta[name="theme-color"]').setAttribute('content', window.metaColors[dataTheme])
+
         toggleButton.classList.remove('dark-mode', 'light-mode')
         toggleButton.classList.add(dataTheme + '-mode')
+
+        const spotLightMode = document.querySelector('.spot-light-mode'),
+            spotDarkMode = document.querySelector('.spot-dark-mode'),
+            haloLightMode = document.querySelector('.halo-light-mode'),
+            haloDarkMode = document.querySelector('.halo-dark-mode')
+
+        if (toggleButton.classList.contains('light-mode')) {
+            spotLightMode.beginElement()
+            haloLightMode.beginElement()
+        } else if (toggleButton.classList.contains('dark-mode')) {
+            spotDarkMode.beginElement()
+            haloDarkMode.beginElement()
+        }
+
     }
 
     toggleButton.addEventListener('click', () => {

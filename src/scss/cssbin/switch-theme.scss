@@ -7,49 +7,9 @@
 	height: 3.6rem;
 	background: none;
 	border: none;
-
-	svg {
-		width: 2.4rem;
-		height: 2.4rem;
-	}
-
-	path.core {
-		//d: path("");
-		fill: black;
-		transition: all 0.75s var(--cubic-bezier);
-	}
-
-	path.halo {
-		//d: path("");
-		fill: black;
-		transition: all 0.35s ease;
-		transform-origin: 50% 50%;
-		animation: switch-halo-rotate-left 0.75s var(--cubic-bezier);
-	}
-
-	&.dark-mode {
-		path.core {
-			d: path("M16 12C16 14.5 14.5 16 12 16C9.5 16 8 14.5 8 12C8 9.5 9.5 8 12 8C14.5 8 16 9.5 16 12Z");
-			fill: lightgray;
-		}
-
-		path.halo {
-			animation: switch-halo-rotate-right 0.75s var(--cubic-bezier);
-			fill: lightgray;
-		}
-	}
+	outline: none;
 }
 
-@keyframes switch-halo-rotate-right {
-	100% {
-		transform: rotate(180deg);
-	}
-}
 
-@keyframes switch-halo-rotate-left {
-	100% {
-		transform: rotate(-180deg);
-	}
-}
 
 

@@ -1,12 +1,12 @@
 .switch-theme {
-	--size: 3.6rem;
 	--transition: fill .35s cubic-bezier(0.175, 0.885, 0.320, 1.275);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: var(--size);
-	height: var(--size);
+	width: 3.6rem;
+	height: 3.6rem;
 	background: none;
+	background: red;
 	border: none;
 	outline: none;
 

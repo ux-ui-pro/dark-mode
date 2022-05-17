@@ -21,11 +21,6 @@ body {
           justify-content: center;
 }
 
-.svg-icon {
-  width: 12.4rem !important;
-  height: 12.4rem !important;
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 html {
@@ -268,10 +263,18 @@ p img:not(:only-child) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
   background: none;
-  background: red;
+  margin: 0;
+  padding: 0;
   border: none;
   outline: none;
+}
+
+.switch-theme .svg-icon {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .switch-theme.light-mode .svg-icon {

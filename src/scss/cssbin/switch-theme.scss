@@ -3,12 +3,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	//width: 3.6rem;
-	//height: 3.6rem;
+	width: 3.6rem;
+	height: 3.6rem;
 	background: none;
-	background: red;
+	margin: 0;
+	padding: 0;
 	border: none;
 	outline: none;
+
+	.svg-icon {
+		width: 2.4rem; height: 2.4rem;
+	}
 
 	&.light-mode {
 		.svg-icon {
